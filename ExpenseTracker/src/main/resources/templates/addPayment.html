@@ -1,0 +1,104 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		</head>
+		<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <div class="container-fluid">
+		    <a class="navbar-brand">EXPENSE TRACKER</a>
+		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="/map-Pview">PAYMENT</a>
+		        </li>    
+		    </div>
+		  </div>
+		</nav>
+		
+		<div class="container mt-3">
+		
+			<div class="row">
+		
+			<div class="col-md-4">
+				
+		</div>
+		
+		<div class="col-md-4 jumbotron">
+		
+			<h4 class="text-center bg-primary text-white">ADD PAYMENT</h4> 
+		<br>
+		 <form action="/addPay" method="post">
+		 
+			     <div class="mb-3">
+			          <label>Payment Type:</label>
+			            <select class="form-control" name="ptype" required>
+                         <option selected>Payment Type</option>
+                         <option value="CASH">CASH</option>
+                         <option value="DEBIT CARD">DEBIT CARD</option>
+                         <option value="CREDIT CARD">CREDIT CARD</option>
+                         <option value="NETBANKING">NETBANKING</option>
+                         <option value="WALLET/UPI">WALLET/UPI</option>
+                         <option value="CHEQUE">CHEQUE</option>
+                         <option value="CRYPTO">CRYPTO</option>
+                         
+                     </select>       
+
+			                        
+			        </div>
+		
+		
+		               <div class="mb-3">
+		                 <label>Payment Mode:</label>
+		                <select class="form-control" name="pmode" required>
+                        <option selected>Payment Mode</option>
+                        <option value="RUPEE">RUPEE</option>
+                        <option value="DEBIT CARD-HDFC">DEBIT CARD-HDFC</option>
+                        <option value="DEBIT CARD-SBI">DEBIT CARD-SBI</option>
+                        <option value="CREDIT CARD-HDFC">CREDIT CARD-HDFC</option>
+                        <option value="CREDIT CARD-SBI">CREDIT CARD-SBI</option>
+                        <option value="PAYTM WALLET">PAYTM WALLET</option>
+                        <option value="GPAY">GPAY</option>
+                        <option value="PHONE PAY">PHONE PAY</option>
+                        <option value="HDFC-ITPB">HDFC-ITPB</option>
+                        <option value="HDFC-SADASHIVA NAGAR">HDFC-SADASHIVA NAGAR</option>
+                        <option value="SBI-AECS LAYOUT">SBI-AECS LAYOUT</option>
+                        <option value="BITCOIN">BITCOIN</option>
+                        <option value="SBI CHECKBOOK">SBI CHECKBOOK</option>
+                        <option value="AIRTEL MONEY">AIRTEL MONEY</option>
+                        
+                    </select>       
+		              </div>
+		              
+		               <div class="mb-3">
+		                 <label>Payment Description:</label>
+		                 <input type="text" class="form-control" name="pdesc"  placeholder="Payment Description" required>
+		              </div>
+		
+		
+		              <div class="mb-3">
+		
+		
+		                 <button class="btn btn-primary" type="submit">Add Payment</button>
+		
+		
+		              </div>
+		
+		
+		           </form>
+		           </div>
+		
+		<div class="col-md-4"></div>
+		
+		</div>
+		
+		
+		</div>
+		           
+		
+		
+		
+		</body>
+		</html>

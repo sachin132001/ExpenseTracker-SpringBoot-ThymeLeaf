@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">EXPENSE TRACKER</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/map-home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disable" aria-current="page">CATEGORY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/map-Vview">VENDOR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/map-Pview">PAYMENT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/map-Tview">TRANSACTION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/report">REPORT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron p-3">
+       <h2><b>Category</b>  <a class="btn btn-primary" href="/map-addCategory">
+          ADD CATEGORY
+        </a></h2>
+
+
+        <table class="table table-hover table-dark">
+          <tr>
+            <th>CategoryID</th>
+            <th>Category Name</th>
+            <th>Category Description</th>
+            <th>Category Type</th>
+            <th>Parent Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+          <tr th:each="category : ${clist}">
+                    <td th:text=${category.cid}></td>
+                    <td th:text=${category.cat_name}></td>
+                    <td th:text=${category.cat_desc}></td>
+                    <td th:text=${category.cat_type}></td>
+                    <td th:text=${category.p_cat}></td>
+                   <td><a th:href="@{/update/{id}(id=${category.cid})}"><button class="btn btn-warning">Edit</button></a></td>
+
+                  <td>
+    <form th:action="@{/delete/{id}(id=${category.cid})}" method="post" onsubmit="return confirm('Are You Sure To Delete ?')">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+    </form>
+</td>
+
+
+                </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
